@@ -10,71 +10,99 @@
 </head>
 
 <body>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="interactivity.js"></script>
     <div id="header" class="header">
-        <a href="exploration.html" class="container clickable">
+        <a href="./index.html" class="container clickable" id="account-container">
             <img src="noun_Hiking_4185384.svg" width="50px">
-            <div id="name-container">Mackenzie Creamer</div>
+            <div id="name-container">Your name here!</div>
         </a>
-
-        <!-- Add button to take you back to the index.html page -->
         <div class="container" id="title-container">
             <h2>DS4200 Web Dev Tutorial!</h2>
         </div>
-        <!-- Add buttons to various webpages here 
         <div class="container" id="pages-container">
-            Google
-            W3Schools
-            Exploration Page
+            <a class="pages-btn clickable" href="https://www.google.com">
+                Google
+            </a>
+            <a class="pages-btn clickable" href="https://www.w3schools.com/html/">
+                w3schools
+            </a>
+            <a class="pages-btn clickable" href="./exploration.html">
+                Exploration page
+            </a>
         </div>
-        -->
     </div>
     <div class="container body-container">
         <div class="container content-container">
             <div class="container content-title">
                 <h3>Table content below!</h3>
             </div>
-            <div class="">
-                <table id="recordTable">
+            <div class="container content-body">
+                <table id="recordsTable">
                     <thead>
                         <tr>
                             <th>Customer</th>
                             <th>Purchase Date</th>
-                            <th>Purchase Amount</th>
+                            <th class="no-right-border">Purchase Amount</th>
                         </tr>
                     </thead>
                     <tbody>
-
+                        <tr id="67576">
+                            <td>Alice</td>
+                            <td>9/5/2026</td>
+                            <td class="no-right-border">$57.00</td>
+                        </tr>
+                        <tr id="18400">
+                            <td>Bob</td>
+                            <td>9/15/2026</td>
+                            <td class="no-right-border">$8.29</td>
+                        </tr>
+                        <tr id="42144">
+                            <td>Charlie</td>
+                            <td>5/30/2026</td>
+                            <td class="no-right-border">$92.10</td>
+                        </tr>
+                        <tr id="48765">
+                            <td>Diana</td>
+                            <td>4/1/2026</td>
+                            <td class="no-right-border">$27.37</td>
+                        </tr>
+                        <tr id="33156">
+                            <td>Edith</td>
+                            <td>10/14/2026</td>
+                            <td class="no-right-border">$58.13</td>
+                        </tr>
+                        <tr id="72226">
+                            <td class="no-bottom-border">Frank</td>
+                            <td class="no-bottom-border">9/29/2025</td>
+                            <td class="no-bottom-border no-right-border">$31.28</td>
+                        </tr>
                     </tbody>
                 </table>
-                <button onmousedown="populateTable()">Click me to add elements to the table!</button>
             </div>
         </div>
-        <!--<div class="container content-container">
+        <div class="container content-container">
             <div class="container content-title">
                 <h3>Control table content below!</h3>
             </div>
-             
             <div class="container content-body" style="flex-direction: column;">
-                <p>
-                    To manipulate the table on the left, press one of the following buttons. 
-                    Doing so will oranize the table or highlight//drop an element from the table.
-                </p>
+                <p style="margin: 10px; text-align: center; height: 100px;">To manipulate the table on the left, press one of the following buttons. Doing so will oranize the table or highlight//drop an element from the table.</p>
                 <div class="ctrl-btn-container">
-                    <button class="ctrl-btn">Sort by Name!</button>
-                    <button class="ctrl-btn">Sort by Date!</button>
-                    <button class="ctrl-btn">Sort by Amount!</button> 
+                    <button class="ctrl-btn" onmousedown="sort('Name',true);">Sort by Name!</button>
+                    <button class="ctrl-btn" onmousedown="sort('Date',true);">Sort by Date!</button>
+                    <button class="ctrl-btn" onmousedown="sort('Amount',true);">Sort by Amount!</button> 
                 </div>
                 <div class="ctrl-btn-container">
-                    <button class="ctrl-btn">Highlight by Earliest Name!</button>
-                    <button class="ctrl-btn">Highlight by Earliest Date!</button>
-                    <button class="ctrl-btn">Highlight by Lowest Amount!</button> 
+                    <button class="ctrl-btn" onmousedown="highlightHighest('Name',true);">Highlight by Earliest Name!</button>
+                    <button class="ctrl-btn" onmousedown="highlightHighest('Date',true);">Highlight by Earliest Date!</button>
+                    <button class="ctrl-btn" onmousedown="highlightHighest('Amount',true);">Highlight by Lowest Amount!</button> 
                 </div>
                 <div class="ctrl-btn-container">
-                    <button class="ctrl-btn">Drop by Latest Name!</button>
-                    <button class="ctrl-btn">Drop by Latest Date!</button>
-                    <button class="ctrl-btn">Drop by Highest Amount!</button> 
+                    <button class="ctrl-btn" onmousedown="dropLowest('Name',true);">Drop by Latest Name!</button>
+                    <button class="ctrl-btn" onmousedown="dropLowest('Date',true);">Drop by Latest Date!</button>
+                    <button class="ctrl-btn" onmousedown="dropLowest('Amount',true);">Drop by Highest Amount!</button> 
                 </div>
-            </div> -->
+            </div>
         </div>
     </div>
     
@@ -84,7 +112,4 @@
         </div>
     </div>
 </body>
-
-<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
-<script src="interactivity.js"></script>
 </html>
